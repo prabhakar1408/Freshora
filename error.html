@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>SYSTEM ERROR — Freshora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="page-error-ai">
+    <div class="error-bg-stage" aria-hidden="true">
+        <div class="error-bg-scanlines"></div>
+        <div class="error-bg-orb error-bg-orb--1"></div>
+        <div class="error-bg-orb error-bg-orb--2"></div>
+        <div class="error-bg-orb error-bg-orb--3"></div>
+        <div class="error-bg-grid"></div>
+    </div>
+
+    <div class="error-entry-flash" id="error-entry-flash"></div>
+
+    <main class="error-main">
+        <div class="error-glass-card" id="error-glass-card">
+            <div class="error-card-glow-ring" aria-hidden="true"></div>
+            <p class="error-scan-tag" aria-hidden="true"><span>SIGNAL_LOST</span></p>
+
+            <h1 class="error-neon-title">⚠️ SYSTEM ERROR</h1>
+
+            <p class="error-type-row">
+                <span id="error-type-subtitle" class="error-type-plain"></span><span id="error-cursor-sub" class="error-type-cursor" aria-hidden="true"></span>
+            </p>
+
+            <div class="error-ai-terminal">
+                <div class="error-ai-terminal-bar">
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    <span class="error-ai-terminal-label">FRES_HORA_AI // SCAN_STREAM</span>
+                </div>
+                <div class="error-ai-terminal-body">
+                    <p class="error-type-row">
+                        <span id="error-type-ai" class="error-type-ai"></span><span id="error-cursor-ai" class="error-type-cursor" aria-hidden="true"></span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="error-actions">
+                <a href="cart.html" class="error-btn error-btn-retry">Retry Order</a>
+                <a href="index.html" class="error-btn error-btn-home">Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="error-terminal-footer-wrap">
+        <p class="error-terminal-footer">
+            <span id="error-type-footer"></span><span id="error-cursor-footer" class="error-type-cursor error-terminal-footer-cursor"></span>
+        </p>
+    </footer>
+
+    <script>
+        (function () {
+            function sleep(ms) {
+                return new Promise(function (resolve) {
+                    setTimeout(resolve, ms);
+                });
+            }
+
+            var reduceMotion =
+                typeof window.matchMedia !== 'undefined' &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function setCursor(on, cursorEl) {
+                if (!cursorEl) return;
+                if (on) cursorEl.classList.add('is-on');
+                else cursorEl.classList.remove('is-on');
+            }
+
+            function typeChars(el, text, msChar) {
+                if (!el) return sleep(0);
+                el.textContent = '';
+                if (reduceMotion) {
+                    el.textContent = text;
+                    return sleep(0);
+                }
+                var i = 0;
+                return new Promise(function (resolve) {
+                    function tick() {
+                        if (i >= text.length) {
+                            resolve();
+                            return;
+                        }
+                        el.textContent += text.charAt(i);
+                        i += 1;
+                        setTimeout(tick, msChar);
+                    }
+                    tick();
+                });
+            }
+
+            document.body.classList.add('error-page-shake-entry');
+            setTimeout(function () {
+                document.body.classList.remove('error-page-shake-entry');
+            }, 320);
+
+            var flash = document.getElementById('error-entry-flash');
+            if (flash) flash.classList.add('error-entry-flash--play');
+
+            var card = document.getElementById('error-glass-card');
+            if (card) {
+                if (reduceMotion) card.classList.add('is-visible');
+                else setTimeout(function () { card.classList.add('is-visible'); }, 380);
+            }
+
+            var subEl = document.getElementById('error-type-subtitle');
+            var cSub = document.getElementById('error-cursor-sub');
+            var aiEl = document.getElementById('error-type-ai');
+            var cAi = document.getElementById('error-cursor-ai');
+            var footEl = document.getElementById('error-type-footer');
+            var cFoot = document.getElementById('error-cursor-footer');
+
+            var subText = 'Checkout system is currently unavailable';
+            var aiText =
+                'Freshora AI detected unusual activity. Please try again later.';
+            var footText =
+                'System intercepted by Prabhakar Jha ⚡ | Gurukul Kangri University';
+
+            async function run() {
+                await sleep(reduceMotion ? 0 : 480);
+                setCursor(true, cSub);
+                await typeChars(subEl, subText, reduceMotion ? 0 : 28);
+                setCursor(false, cSub);
+
+                await sleep(reduceMotion ? 0 : 220);
+                setCursor(true, cAi);
+                await typeChars(aiEl, aiText, reduceMotion ? 0 : 22);
+                setCursor(false, cAi);
+
+                await sleep(reduceMotion ? 0 : 200);
+                if (footEl && cFoot) {
+                    cFoot.classList.add('is-on');
+                    cFoot.classList.remove('is-blink');
+                    await typeChars(footEl, footText, reduceMotion ? 0 : 38);
+                    cFoot.classList.add('is-blink');
+                }
+            }
+
+            run();
+        })();
+    </script>
+</body>
+</html>

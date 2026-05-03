@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Order status — Freshora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="page-order-status">
+    <main class="order-status-shell" id="order-status-shell">
+        <div class="order-status-card">
+            <div class="order-status-icon-wrap" id="order-status-icon-wrap" aria-hidden="true">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h1 class="order-status-title" id="order-status-title">Order Placed Successfully 🎉</h1>
+            <p class="order-status-sub" id="order-status-sub">Your fresh groceries are on the way!</p>
+            <p class="order-status-ai" id="order-status-ai">Freshora AI says: Eat healthy, stay strong 💪</p>
+            <div class="order-status-actions">
+                <a href="index.html" class="order-status-btn order-status-btn-primary">Back to Home</a>
+                <a href="products.html" class="order-status-btn order-status-btn-secondary">Continue Shopping</a>
+            </div>
+        </div>
+        <footer class="order-status-foot">
+            Built by Prabhakar Jha | Gurukul Kangri University
+        </footer>
+    </main>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var demo = params.get('m') === 'demo';
+
+            var shell = document.getElementById('order-status-shell');
+            var title = document.getElementById('order-status-title');
+            var sub = document.getElementById('order-status-sub');
+
+            if (demo && shell) shell.classList.add('order-status-shell--demo');
+
+            if (demo) {
+                if (title) title.textContent = 'Oops! This is a demo checkout ⚠️';
+                if (sub) sub.textContent = 'Ordering system is not connected yet.';
+            }
+
+            document.title =
+                demo ? 'Demo checkout — Freshora' : 'Order placed — Freshora';
+        })();
+    </script>
+</body>
+</html>

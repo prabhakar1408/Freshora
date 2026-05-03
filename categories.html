@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Categories — Freshora</title>
+</head>
+<body>
+    <script>(function(){try{if(localStorage.getItem('freshora-theme')==='dark')document.body.classList.add('dark-mode');}catch(e){}})();</script>
+    <header class="header">
+        <a href="index.html" class="logo"><i class="fas fa-shopping-basket"></i>Freshora</a>
+        <nav class="navbar mobile-menu" id="site-nav">
+            <a href="index.html">home</a>
+            <a href="features.html">features</a>
+            <a href="products.html">products</a>
+            <a href="categories.html" class="active">categories</a>
+            <a href="review.html">review</a>
+            <a href="blogs.html">blogs</a>
+            <a href="cart.html">cart</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
+            <div class="icon-wrap cart-icon-wrap" id="cart-btn" title="Shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge" id="cart-count-badge" hidden>0</span>
+            </div>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+        <form class="search-form">
+            <input type="search" id="search-box" placeholder="Search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+        <div class="shopping-cart">
+            <h4 class="cart-preview-title">Your cart</h4>
+            <div id="cart-preview-items"></div>
+            <div class="total" id="cart-preview-total">Total: ₹0</div>
+            <a href="cart.html" class="btn">View cart & checkout</a>
+        </div>
+        <form class="login-form">
+            <h3>Login Now</h3>
+            <input type="email" class="box" placeholder="Email-ID">
+            <input type="password" class="box" placeholder="Password">
+            <p>Forget your Password <a href="#">Click here</a></p>
+            <p>Don't have any Account <a href="#">Create New Account</a></p>
+            <input type="submit" value="Login Now" class="btn">
+        </form>
+    </header>
+
+    <section class="page-hero">
+        <h1>Product <span>Categories</span></h1>
+        <p>Jump straight into the aisle you need.</p>
+    </section>
+
+    <section class="categories section-categories-premium">
+        <div class="category-grid">
+            <article class="category-card">
+                <div class="category-card-img-wrap">
+                    <img src="./images/milk.png" alt="Dairy products" width="480" height="190" loading="lazy"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=800&q=85';">
+                </div>
+                <div class="category-card-body">
+                    <h3>Dairy</h3>
+                    <p>Milk, yogurt, paneer &amp; more</p>
+                    <a href="products.html?cat=dairy" class="btn btn--primary category-card-btn">Shop dairy</a>
+                </div>
+            </article>
+            <article class="category-card">
+                <div class="category-card-img-wrap">
+                    <img src="./images/mango.png" alt="Fresh fruits" width="480" height="190" loading="lazy"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1619566636858-adf3-494ef0c27f2?w=800&q=85';">
+                </div>
+                <div class="category-card-body">
+                    <h3>Fruits</h3>
+                    <p>Seasonal &amp; juicy picks</p>
+                    <a href="products.html?cat=fruits" class="btn btn--primary category-card-btn">Shop fruits</a>
+                </div>
+            </article>
+            <article class="category-card">
+                <div class="category-card-img-wrap">
+                    <img src="./images/spinach.png" alt="Fresh vegetables" width="480" height="190" loading="lazy"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1597362925123-77861d3fbac7?w=800&q=85';">
+                </div>
+                <div class="category-card-body">
+                    <h3>Vegetables</h3>
+                    <p>Farm-fresh greens &amp; roots</p>
+                    <a href="products.html?cat=vegetables" class="btn btn--primary category-card-btn">Shop vegetables</a>
+                </div>
+            </article>
+            <article class="category-card">
+                <div class="category-card-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=800&q=85" alt="Juices and drinks" width="480" height="190" loading="lazy"
+                         onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1576673442511-7e39b6545de3?w=800&q=85';">
+                </div>
+                <div class="category-card-body">
+                    <h3>Juices</h3>
+                    <p>Cold-pressed &amp; blends</p>
+                    <a href="products.html?cat=juices" class="btn btn--primary category-card-btn">Shop juices</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Freshora <i class="fas fa-shopping-basket"></i></h3>
+                <p>Your trusted source for fresh and organic products in Haridwar.</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="tel:+917417963162" class="links"><i class="fas fa-phone"></i>+91 7417963162</a>
+                <a href="mailto:prabhakarjha1408@gmail.com" class="links"><i class="fas fa-envelope"></i>prabhakarjha1408@gmail.com</a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i>Jwalapur, Haridwar</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html" class="links"><i class="fas fa-arrow-right"></i>Home</a>
+                <a href="products.html" class="links"><i class="fas fa-arrow-right"></i>Products</a>
+                <a href="cart.html" class="links"><i class="fas fa-arrow-right"></i>Cart</a>
+            </div>
+            <div class="box">
+                <h3>Newsletter</h3>
+                <p>Subscribe for latest updates</p>
+                <input type="email" placeholder="Enter your Email" class="email">
+                <input type="submit" value="Subscribe" class="btn">
+            </div>
+        </div>
+        <div class="credit">Created by <span>Prabhakar Jha</span> | all rights reserved |</div>
+    </section>
+
+    <script src="./js/products-data.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/common.js"></script>
+</body>
+</html>

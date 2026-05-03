@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Home — Freshora</title>
+</head>
+<body class="page-home">
+    <script>(function(){try{if(localStorage.getItem('freshora-theme')==='dark')document.body.classList.add('dark-mode');}catch(e){}})();</script>
+    <header class="header">
+        <a href="index.html" class="logo"><i class="fas fa-shopping-basket"></i>Freshora</a>
+        <nav class="navbar mobile-menu" id="site-nav">
+            <a href="index.html" class="active">home</a>
+            <a href="features.html">features</a>
+            <a href="products.html">products</a>
+            <a href="categories.html">categories</a>
+            <a href="review.html">review</a>
+            <a href="blogs.html">blogs</a>
+            <a href="cart.html">cart</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <div class="fas fa-search" id="search-btn"></div>
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" title="Dark mode"><i class="fas fa-moon" aria-hidden="true"></i></button>
+            <div class="icon-wrap cart-icon-wrap" id="cart-btn" title="Shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge" id="cart-count-badge" hidden>0</span>
+            </div>
+            <div class="fas fa-user" id="login-btn"></div>
+        </div>
+        <form class="search-form">
+            <input type="search" id="search-box" placeholder="Search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+        <div class="shopping-cart">
+            <h4 class="cart-preview-title">Your cart</h4>
+            <div id="cart-preview-items"></div>
+            <div class="total" id="cart-preview-total">Total: ₹0</div>
+            <a href="cart.html" class="btn">View cart & checkout</a>
+        </div>
+        <form class="login-form">
+            <h3>Login Now</h3>
+            <input type="email" class="box" placeholder="Email-ID">
+            <input type="password" class="box" placeholder="Password">
+            <p>Forget your Password <a href="#">Click here</a></p>
+            <p>Don't have any Account <a href="#">Create New Account</a></p>
+            <input type="submit" value="Login Now" class="btn">
+        </form>
+    </header>
+
+    <section class="home home--hero" id="home" aria-label="Featured banner">
+        <div class="hero-slides" aria-hidden="true">
+            <div class="hero-slide is-active" style="background-image:url('https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&amp;fit=crop&amp;w=2000&amp;q=85');"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&amp;fit=crop&amp;w=2000&amp;q=85');"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1543168256-418811e93168?auto=format&amp;fit=crop&amp;w=2000&amp;q=85');"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1579113806932-c735fcd81742?auto=format&amp;fit=crop&amp;w=2000&amp;q=85');"></div>
+            <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&amp;fit=crop&amp;w=2000&amp;q=85');"></div>
+        </div>
+        <div class="home-overlay"></div>
+        <div class="content hero-content">
+            <p class="hero-badge"><i class="fas fa-seedling" aria-hidden="true"></i> 100% fresh · Haridwar delivery</p>
+            <h1 class="hero-title">Fresh Groceries <span class="hero-highlight">Delivered</span> to Your Doorstep</h1>
+            <p class="hero-sub">Direct from farmers to your plate — healthy, pure, and full of life.</p>
+            <p class="hero-quote">A healthy diet is not a choice, it's a lifestyle.</p>
+            <div class="hero-cta">
+                <a href="products.html" class="btn btn--primary hero-btn">Shop now</a>
+                <a href="categories.html" class="btn btn--ghost hero-btn hero-btn--outline">Browse categories</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-strip stats-cards-section" aria-label="Store highlights">
+        <div class="stats-cards-inner">
+            <article class="stat-card">
+                <div class="stat-card-icon" aria-hidden="true"><i class="fas fa-shopping-bag"></i></div>
+                <div class="stat-card-number">24+</div>
+                <div class="stat-card-label">Products</div>
+            </article>
+            <article class="stat-card">
+                <div class="stat-card-icon" aria-hidden="true"><i class="fas fa-th-large"></i></div>
+                <div class="stat-card-number">4</div>
+                <div class="stat-card-label">Categories</div>
+            </article>
+            <article class="stat-card">
+                <div class="stat-card-icon" aria-hidden="true"><i class="fas fa-truck"></i></div>
+                <div class="stat-card-number">Free</div>
+                <div class="stat-card-label">Delivery ₹500+</div>
+            </article>
+            <article class="stat-card">
+                <div class="stat-card-icon" aria-hidden="true"><i class="fas fa-wallet"></i></div>
+                <div class="stat-card-number">COD</div>
+                <div class="stat-card-label">&amp; UPI</div>
+            </article>
+        </div>
+    </section>
+
+    <section class="home-shop-cta section-alt-bg">
+        <div class="home-shop-cta-inner">
+            <div class="home-shop-cta-text">
+                <h2>Shop the full <span>store</span></h2>
+                <p>Browse every product, filter by category, and add to your cart — all on the products page.</p>
+            </div>
+            <div class="home-shop-cta-actions">
+                <a href="products.html" class="btn btn--primary">Go to products</a>
+                <a href="categories.html" class="btn btn--ghost">Categories</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer" id="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>Freshora <i class="fas fa-shopping-basket"></i></h3>
+                <p>Your trusted source for fresh and organic products. Serving Jwalapur, Haridwar with quality groceries delivered to your doorstep.</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="tel:+917417963162" class="links"><i class="fas fa-phone"></i>+91 7417963162</a>
+                <a href="mailto:prabhakarjha1408@gmail.com" class="links"><i class="fas fa-envelope"></i>prabhakarjha1408@gmail.com</a>
+                <a href="#" class="links"><i class="fas fa-map-marker-alt"></i>Jwalapur, Haridwar</a>
+            </div>
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html" class="links"><i class="fas fa-arrow-right"></i>Home</a>
+                <a href="features.html" class="links"><i class="fas fa-arrow-right"></i>Features</a>
+                <a href="products.html" class="links"><i class="fas fa-arrow-right"></i>Products</a>
+                <a href="categories.html" class="links"><i class="fas fa-arrow-right"></i>Categories</a>
+                <a href="cart.html" class="links"><i class="fas fa-arrow-right"></i>Cart</a>
+                <a href="blogs.html" class="links"><i class="fas fa-arrow-right"></i>Blogs</a>
+            </div>
+            <div class="box">
+                <h3>Newsletter</h3>
+                <p>Subscribe for latest updates</p>
+                <input type="email" placeholder="Enter your Email" class="email">
+                <input type="submit" value="Subscribe" class="btn">
+            </div>
+        </div>
+        <div class="credit">
+            Created by <span>Prabhakar Jha</span> | all rights reserved |
+        </div>
+    </section>
+
+    <script src="./js/cart.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/home-animations.js"></script>
+</body>
+</html>
